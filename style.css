@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  background: #ffeaf1;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scene {
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Bé trai */
+.boy {
+  width: 120px;
+  animation:
+    runIn 2.2s ease-out forwards,
+    hug 1.2s infinite alternate 2.2s;
+}
+
+@keyframes runIn {
+  from {
+    transform: scale(0.2) translateY(400px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* Giả lập tay vươn + ôm */
+@keyframes hug {
+  from {
+    transform: scale(1.2) rotate(0deg);
+  }
+  to {
+    transform: scale(1.35) rotate(-2deg);
+  }
+}
+
+/* Bong bóng */
+.bubble {
+  position: absolute;
+  top: -85px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  color: hotpink;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-size: 14px;
+  animation: pop 1s infinite alternate;
+}
+
+@keyframes pop {
+  from { transform: translateX(-50%) scale(1); }
+  to   { transform: translateX(-50%) scale(1.1); }
+}
+
+/* Tim bay */
+.heart {
+  position: absolute;
+  font-size: 22px;
+  animation: floatUp 3s linear forwards;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-300px) scale(1.4);
+    opacity: 0;
+  }
+}
